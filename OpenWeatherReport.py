@@ -18,7 +18,7 @@ def fixTime(time):
 def build_url(city_id):
     id = city_id
     unit = 'metric'
-    API_KEY = 'e3a1e4e2c78715cfb57ce384c87668d6'
+    API_KEY = 'Insert API key here'
     url = 'http://api.openweathermap.org/data/2.5/weather?id='
     full_url = url + str(city_id) + '&mode=json&units=' + unit + '&APPID=' + API_KEY
     return full_url
