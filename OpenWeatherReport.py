@@ -1,6 +1,12 @@
 import datetime
 import json
 import urllib.request
+import os
+
+def notify(title, text):
+    os.system("""
+              osascript -e 'display notification "{}" with title "{}"'
+              """.format(text, title))
 
 
 def fixTime(time):
@@ -56,6 +62,8 @@ def postData(data):
 
 if __name__ == '__main__':
     try:
-        postData(organizeData(GetData(build_url(1275339))))
+       test =  postData(organizeData(GetData(build_url(1275339))))
+       notify("Weather Update {}".format(datetime.datetime.now().time()), test)
+
     except IOError:
         print('No Internet Connection!')
